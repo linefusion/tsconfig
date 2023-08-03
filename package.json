@@ -1,5 +1,6 @@
 {
   "name": "@linefusion/tsconfig",
+  "private": true,
   "version": "0.0.0",
   "license": "MIT",
   "description": "Linefusion tsconfig files.",
@@ -37,6 +38,7 @@
     "directory": "./dist",
     "linkDirectory": true,
     "overrides": {
+      "private": false,
       "files": [
         "README.md",
         "CHANGELOG.md",
