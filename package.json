@@ -1,7 +1,7 @@
 {
   "name": "@linefusion/tsconfig",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "description": "Linefusion tsconfig files.",
   "keywords": [
@@ -25,6 +25,7 @@
   ],
   "scripts": {
     "build": "wtx package prepare && pnpm run /copy:*/",
+    "release": "cd dist && pnpm publish",
     "copy:tsconfigs": "wtx files copy --source src --target dist",
     "copy:extras": "wtx files copy --source.base ./ --source.files {README.md,CHANGELOG.md,LICENSE} --target ./dist/"
   },
