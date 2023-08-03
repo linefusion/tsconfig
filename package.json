@@ -1,0 +1,48 @@
+{
+  "name": "@linefusion/tsconfig",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Linefusion tsconfig files.",
+  "keywords": [
+    "linefusion",
+    "typescript",
+    "tsconfig"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linefusion/tsconfig"
+  },
+  "author": {
+    "name": "João Biondo",
+    "email": "wolfulus@gmail.com",
+    "url": "https://github.com/wolfulus"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "wtx package prepare && pnpm run /copy:*/",
+    "copy:tsconfigs": "wtx files copy --source src --target dist",
+    "copy:extras": "wtx files copy --source.base ./ --source.files {README.md,CHANGELOG.md,LICENSE} --target ./dist/"
+  },
+  "devDependencies": {
+    "@wolfpkgs/files": "^0.2.13",
+    "@wolfpkgs/package": "^0.2.14",
+    "@wolfpkgs/toolbox": "^0.2.13",
+    "changeset": "^0.2.6"
+  },
+  "publishConfig": {
+    "directory": "./dist",
+    "linkDirectory": true,
+    "overrides": {
+      "files": [
+        "README.md",
+        "CHANGELOG.md",
+        "LICENSE",
+        "**/*.json"
+      ]
+    }
+  }
+}
