@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "build": "wtx package prepare && pnpm run /copy:*/",
-    "release": "cd dist && pnpm publish",
+    "release": "pnpm build && cd dist && pnpm publish --access public --no-git-checks",
     "copy:tsconfigs": "wtx files copy --source src --target dist",
     "copy:extras": "wtx files copy --source.base ./ --source.files {README.md,CHANGELOG.md,LICENSE} --target ./dist/"
   },
